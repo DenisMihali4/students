@@ -10,4 +10,5 @@ public interface TimeTable {
     List<Lecture> allLectures();
     List<Lecture> lecturesFrom(Date date);
     List<Lecture> lecturesTo(Date date);
+    List<Lecture> lecturesForNextWeek();
 }

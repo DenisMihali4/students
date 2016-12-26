@@ -14,9 +14,6 @@ public class StudentPOJO implements Student {
         this.surname = surname;
     }
 
-    public StudentPOJO() {
-
-    }
 
 
     @Override
