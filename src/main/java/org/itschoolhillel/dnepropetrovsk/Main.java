@@ -32,12 +32,12 @@ public class Main {
                 return;
              }
 
-            System.out.println(new File("/app.properties").getAbsolutePath());
+            System.out.println(new File("app.properties").getAbsolutePath());
 
             Properties properties = new Properties();
-            properties.load(new FileInputStream(new File("/app.properties")));
+            properties.load(new FileInputStream(new File("app.properties")));
             String coursesName= "subscription";
-            String coursesPath = properties.getProperty(COURSES_PATH_KEY,"src/main/resources/courses");
+            String coursesPath = properties.getProperty(COURSES_PATH_KEY,"src/main/resources/");
             Path coursesDirectoryPath = Paths.get(coursesPath,coursesName +".txt");
 
             Map<Integer, List<String>> subscriptions = readSubscriptions();
@@ -50,7 +50,7 @@ public class Main {
 
             List<Path> courseFiles = new ArrayList<>();
             for (String name : courseNames) {
-                courseFiles.add(Paths.get(String.valueOf(coursesDirectoryPath), name + ".txt"));
+                courseFiles.add(Paths.get(String.valueOf(coursesPath),  name +".txt"));
             }
 
             //Делаю все в цикле по одной переменной для взаимосвязи между coursePathes и courseNames
